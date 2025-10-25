@@ -1,0 +1,154 @@
+<div class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
+    <!-- Header -->
+    <header class="bg-white shadow-md border-b border-gray-200">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <div class="bg-[#222] text-white rounded-lg p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                </div>
+                <h1 class="text-2xl font-extrabold text-gray-900">GymDesk</h1>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <div class="text-right">
+                    <p class="text-sm font-semibold text-gray-900" id="userName">Usuario</p>
+                    <p class="text-xs text-gray-500" id="userRole">Admin</p>
+                </div>
+                <button id="logoutBtn" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-lg font-semibold transition flex items-center space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+                    </svg>
+                    <span>Cerrar Sesión</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-8">
+        <!-- Welcome Card -->
+        <div class="bg-gradient-to-r from-[#222] to-gray-800 rounded-2xl shadow-xl p-8 mb-8 text-white">
+            <h2 class="text-3xl font-bold mb-2">Bienvenido, <span id="userWelcome">Usuario</span>!</h2>
+            <p class="text-gray-300">Panel de administración - <span id="userCompany">Gimnasio</span></p>
+            <p class="text-sm text-gray-400 mt-2">Último acceso: <span id="currentDate"></span></p>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white rounded-xl shadow-md p-6 border border-gray-200 hover:shadow-lg transition">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-600 font-semibold">Miembros Activos</p>
+                        <p class="text-3xl font-bold text-gray-900 mt-2">245</p>
+                    </div>
+                    <div class="bg-blue-100 p-3 rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                    </div>
+                </div>
+                <p class="text-xs text-green-600 mt-2">↑ 12% este mes</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-6 border border-gray-200 hover:shadow-lg transition">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-600 font-semibold">Clases Hoy</p>
+                        <p class="text-3xl font-bold text-gray-900 mt-2">18</p>
+                    </div>
+                    <div class="bg-green-100 p-3 rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-600 mt-2">6 programadas más</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-6 border border-gray-200 hover:shadow-lg transition">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-600 font-semibold">Ingresos Mes</p>
+                        <p class="text-3xl font-bold text-gray-900 mt-2">$12.5K</p>
+                    </div>
+                    <div class="bg-yellow-100 p-3 rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                </div>
+                <p class="text-xs text-green-600 mt-2">↑ 8% vs mes pasado</p>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-6 border border-gray-200 hover:shadow-lg transition">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm text-gray-600 font-semibold">Equipos</p>
+                        <p class="text-3xl font-bold text-gray-900 mt-2">87</p>
+                    </div>
+                    <div class="bg-purple-100 p-3 rounded-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                        </svg>
+                    </div>
+                </div>
+                <p class="text-xs text-gray-600 mt-2">3 en mantenimiento</p>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <!-- Actions Card -->
+            <div class="bg-white rounded-xl shadow-md p-6 border border-gray-200">
+                <h3 class="text-lg font-bold text-gray-900 mb-4">Acciones Rápidas</h3>
+                <div class="space-y-3">
+                    <button class="w-full bg-[#222] hover:bg-[#333] text-white px-4 py-3 rounded-lg font-semibold transition text-left flex items-center space-x-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                        </svg>
+                        <span>Nuevo Miembro</span>
+                    </button>
+                    <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-900 px-4 py-3 rounded-lg font-semibold transition text-left flex items-center space-x-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
+                        </svg>
+                        <span>Agendar Clase</span>
+                    </button>
+                    <button class="w-full bg-gray-100 hover:bg-gray-200 text-gray-900 px-4 py-3 rounded-lg font-semibold transition text-left flex items-center space-x-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
+                        <span>Ver Reportes</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- User Info Card -->
+            <div class="bg-white rounded-xl shadow-md p-6 border border-gray-200 lg:col-span-2">
+                <h3 class="text-lg font-bold text-gray-900 mb-4">Información de la Cuenta</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <p class="text-xs text-gray-600 font-semibold mb-1">Usuario</p>
+                        <p class="text-sm font-bold text-gray-900" id="userNameDetail">-</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <p class="text-xs text-gray-600 font-semibold mb-1">Email</p>
+                        <p class="text-sm font-bold text-gray-900" id="userEmail">-</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <p class="text-xs text-gray-600 font-semibold mb-1">Empresa</p>
+                        <p class="text-sm font-bold text-gray-900" id="userCompanyDetail">-</p>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <p class="text-xs text-gray-600 font-semibold mb-1">Rol</p>
+                        <p class="text-sm font-bold text-gray-900">
+                            <span id="userRoleDetail" class="inline-block bg-[#222] text-white px-3 py-1 rounded-full text-xs">-</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
